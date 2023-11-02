@@ -17,30 +17,41 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>40</y>
-      <width>74</width>
-      <height>12</height>
+      <x>50</x>
+      <y>30</y>
+      <width>81</width>
+      <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>지역 입력 :</string>
     </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>201</width>
-      <height>31</height>
-     </rect>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLineEdit" name="input_areaBox">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>140</x>
+      <y>30</y>
+      <width>241</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid rgb(0, 0, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="weatherbtn">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
       <y>30</y>
       <width>75</width>
       <height>21</height>
@@ -50,56 +61,106 @@
      <string>날씨조회</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="area_label">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>120</x>
       <y>79</y>
-      <width>321</width>
+      <width>281</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>휴먼편지체</family>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+color: rgb(0, 170, 0);</string>
     </property>
     <property name="text">
      <string>날씨 조회 지역 주소</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="weather_label">
     <property name="geometry">
      <rect>
       <x>110</x>
       <y>129</y>
       <width>101</width>
-      <height>71</height>
+      <height>91</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>나눔고딕</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(85, 170, 255);</string>
     </property>
     <property name="text">
      <string>날씨 이미지</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="temper_label">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>130</y>
-      <width>121</width>
+      <x>300</x>
+      <y>140</y>
+      <width>101</width>
       <height>71</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>나눔고딕</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);</string>
+    </property>
     <property name="text">
-     <string>현재온도</string>
+     <string>23.5 ˚</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="yesterday_label">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>240</y>
+      <y>230</y>
       <width>361</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>휴먼편지체</family>
+      <pointsize>13</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>어제와의 날씨 비교 </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -111,8 +172,14 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>체감 온도</string>
+     <string>체감온도</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -124,8 +191,14 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(85, 85, 255);</string>
+    </property>
     <property name="text">
-     <string>체감 온도</string>
+     <string>미세먼지</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -137,37 +210,56 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: rgb(0, 170, 255);</string>
+    </property>
     <property name="text">
      <string>초미세먼지</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="sense_temper">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>80</x>
       <y>330</y>
       <width>70</width>
       <height>50</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 85, 0)</string>
     </property>
     <property name="text">
      <string>26.5</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLabel" name="dust1_label">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>220</x>
       <y>330</y>
       <width>70</width>
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 85, 0)</string>
+    </property>
     <property name="text">
      <string>좋음</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-   <widget class="QLabel" name="label_11">
+   <widget class="QLabel" name="dust2_label">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -176,8 +268,14 @@
       <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(0, 85, 0)</string>
+    </property>
     <property name="text">
      <string>나쁨</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
