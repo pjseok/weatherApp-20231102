@@ -7,6 +7,10 @@ from bs4 import BeautifulSoup
 from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5.QtCore import Qt
+
+import threading
+import time
 
 form_class = uic.loadUiType("ui/weatherAppUi.ui")[0]
 
@@ -17,8 +21,10 @@ class WeatherWin(QMainWindow, form_class):
         self.setWindowTitle('오늘의 날씨')
         self.setWindowIcon(QIcon('icon/weather_icon.png'))
         self.statusBar().showMessage("Weather Application Ver0.5")
+        self.setWindowFlags(Qt.WindowStaysOnTopHint) # 윈도우를 항상 맨 위에
 
         self.weatherbtn.clicked.connect(self.request_weather)
+        self.weatherbtn.clicked.connect(self.reflashTimer)
 
     def request_weather(self):
         area = self.input_areaBox.text() # 사용자가 입력한 지역이름을 가져오기
@@ -73,6 +79,12 @@ class WeatherWin(QMainWindow, form_class):
             self.weather_label.setPixmap(QPixmap(weatherImage))
         else:
             self.weather_label.setText(weatherText)
+
+
+    def reflashTimer(self): # 자동 갱신
+        self.request_weather()
+        threading.Timer(60, self.reflashTimer).start()
+
 
 
 if __name__ == '__main__':
