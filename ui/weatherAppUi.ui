@@ -103,10 +103,6 @@ color: rgb(0, 170, 0);</string>
       <family>나눔고딕</family>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">
-background-color: rgb(85, 170, 255);</string>
-    </property>
     <property name="text">
      <string>날씨 이미지</string>
     </property>
